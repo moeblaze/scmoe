@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>IR RoofScan Pro</title>
+  <link rel="stylesheet" href="../styles/style.css" />
+</head>
+<body>
+  <header class="hero">
+    <div>
+      <p class="eyebrow">Satellite Roofing Estimator</p>
+      <h1>IR RoofScan Pro</h1>
+      <p class="subtitle">Enter an address, scan the roof from satellite view, draw roof sections, and generate a quick roofing estimate.</p>
+    </div>
+  </header>
+
+  <main class="layout">
+    <section class="card controls-card">
+      <label for="address">Customer Address</label>
+      <input id="address" type="text" placeholder="Enter customer address" />
+
+      <div class="grid-two">
+        <div>
+          <label for="pricePerSquare">Price Per Roofing Square</label>
+          <input id="pricePerSquare" type="number" value="450" min="0" step="25" />
+        </div>
+        <div>
+          <label for="wasteFactor">Waste Factor %</label>
+          <input id="wasteFactor" type="number" value="10" min="0" max="50" step="1" />
+        </div>
+      </div>
+
+      <div class="grid-two">
+        <div>
+          <label for="pitchFactor">Pitch Factor</label>
+          <select id="pitchFactor">
+            <option value="1">Flat / Low Slope</option>
+            <option value="1.054">4/12 Pitch</option>
+            <option value="1.118" selected>6/12 Pitch</option>
+            <option value="1.202">8/12 Pitch</option>
+            <option value="1.302">10/12 Pitch</option>
+            <option value="1.414">12/12 Pitch</option>
+          </select>
+        </div>
+        <div>
+          <label for="laborPerSquare">Labor Per Square</label>
+          <input id="laborPerSquare" type="number" value="150" min="0" step="25" />
+        </div>
+      </div>
+
+      <div class="button-row">
+        <button id="resetBtn">Reset Drawing</button>
+        <button id="exportBtn" class="gold">Export Job JSON</button>
+      </div>
+
+      <p class="note">Replace <strong>YOUR_GOOGLE_MAPS_API_KEY</strong> in index.html before using live Google Maps.</p>
+    </section>
+
+    <section class="map-card">
+      <div id="map"></div>
+    </section>
+
+    <section class="card results-card">
+      <h2>Live Roof Estimate</h2>
+      <div class="results-grid">
+        <div><span>Base Area</span><strong id="baseSqft">0</strong><small>sq ft</small></div>
+        <div><span>Adjusted Area</span><strong id="adjustedSqft">0</strong><small>sq ft</small></div>
+        <div><span>Roofing Squares</span><strong id="roofingSquares">0</strong><small>squares</small></div>
+        <div><span>Estimated Total</span><strong id="estimatedTotal">$0</strong><small>materials + labor</small></div>
+      </div>
+    </section>
+  </main>
+
+  <script src="../src/estimate.js"></script>
+  <script src="../src/draw.js"></script>
+  <script src="../src/map.js"></script>
+  <script src="../src/app.js"></script>
+  <script async defer src="https://maps.googleapis.com/maps/api/js?key=YOUR_GOOGLE_MAPS_API_KEY&libraries=places,geometry&callback=initRoofScanApp"></script>
+</body>
+</html>
