@@ -1,0 +1,1 @@
+function calculateArea(){let area=google.maps.geometry.spherical.computeArea(path);let sqft=area*10.764;document.getElementById("baseSqft").innerText=sqft.toFixed(2);let squares=sqft/100;document.getElementById("roofingSquares").innerText=squares.toFixed(2);}
