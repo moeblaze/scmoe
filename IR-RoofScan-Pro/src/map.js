@@ -1,0 +1,1 @@
+let map;let path=[];function initRoofScanApp(){map=new google.maps.Map(document.getElementById("map"),{center:{lat:34.4,lng:-79.4},zoom:18,mapTypeId:"satellite"});map.addListener("click",e=>addPoint(e.latLng));}
