@@ -3,20 +3,69 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>IR RoofScan Pro</title>
+  <title>IR RoofScan Pro | Satellite Roofing Estimator</title>
+  <meta name="description" content="IR RoofScan Pro helps roofing contractors scan properties from satellite view, draw roof sections, calculate roof area, and prepare faster estimates." />
   <link rel="stylesheet" href="../styles/style.css" />
 </head>
 <body>
-  <header class="hero">
-    <div>
-      <p class="eyebrow">Satellite Roofing Estimator</p>
-      <h1>IR RoofScan Pro</h1>
-      <p class="subtitle">Enter an address, scan the roof from satellite view, draw roof sections, and generate a quick roofing estimate.</p>
-    </div>
+  <header class="site-hero">
+    <nav class="top-nav" aria-label="Primary navigation">
+      <a class="brand" href="#top" aria-label="IR RoofScan Pro home">
+        <span class="brand-mark">IR</span>
+        <span>RoofScan Pro</span>
+      </a>
+      <div class="nav-actions">
+        <a href="#scanner">Open Scanner</a>
+        <a class="nav-cta" href="#estimate">Run Estimate</a>
+      </div>
+    </nav>
+
+    <section class="hero-grid" id="top">
+      <div class="hero-copy">
+        <p class="eyebrow">Satellite Roofing Estimator</p>
+        <h1>Scan roofs faster. Measure smarter. Quote jobs with confidence.</h1>
+        <p class="subtitle">IR RoofScan Pro gives roofing crews a clean satellite workflow for address lookup, roof outlining, square footage, roofing squares, and fast job pricing.</p>
+
+        <div class="hero-actions">
+          <a class="primary-btn" href="#scanner">Start Roof Scan</a>
+          <a class="secondary-btn" href="#estimate">View Live Estimate</a>
+        </div>
+
+        <div class="trust-row" aria-label="Product benefits">
+          <span>Satellite View</span>
+          <span>Polygon Measuring</span>
+          <span>Roofing Squares</span>
+          <span>Instant Estimate</span>
+        </div>
+      </div>
+
+      <aside class="hero-panel" aria-label="IR RoofScan Pro workflow preview">
+        <div class="panel-header">
+          <span class="status-dot"></span>
+          <span>Roof Scan Workflow</span>
+        </div>
+        <div class="workflow-list">
+          <div><strong>01</strong><span>Enter customer address</span></div>
+          <div><strong>02</strong><span>Switch to satellite roof view</span></div>
+          <div><strong>03</strong><span>Draw roof planes</span></div>
+          <div><strong>04</strong><span>Generate square footage and pricing</span></div>
+        </div>
+        <div class="mini-metric">
+          <span>Sample Job</span>
+          <strong>24.6 Squares</strong>
+          <small>Ready for estimate review</small>
+        </div>
+      </aside>
+    </section>
   </header>
 
   <main class="layout">
-    <section class="card controls-card">
+    <section class="card controls-card" id="scanner">
+      <div class="section-heading">
+        <p class="eyebrow">Roof Scanner</p>
+        <h2>Pull up the property and start tracing the roof.</h2>
+      </div>
+
       <label for="address">Customer Address</label>
       <input id="address" type="text" placeholder="Enter customer address" />
 
@@ -53,16 +102,17 @@
         <button id="resetBtn">Reset Drawing</button>
         <button id="exportBtn" class="gold">Export Job JSON</button>
       </div>
-
-      <p class="note">Replace <strong>YOUR_GOOGLE_MAPS_API_KEY</strong> in index.html before using live Google Maps.</p>
     </section>
 
     <section class="map-card">
       <div id="map"></div>
     </section>
 
-    <section class="card results-card">
-      <h2>Live Roof Estimate</h2>
+    <section class="card results-card" id="estimate">
+      <div class="section-heading">
+        <p class="eyebrow">Estimator</p>
+        <h2>Live Roof Estimate</h2>
+      </div>
       <div class="results-grid">
         <div><span>Base Area</span><strong id="baseSqft">0</strong><small>sq ft</small></div>
         <div><span>Adjusted Area</span><strong id="adjustedSqft">0</strong><small>sq ft</small></div>
