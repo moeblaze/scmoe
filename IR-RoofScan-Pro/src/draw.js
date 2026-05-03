@@ -1,0 +1,1 @@
+let polygon;function addPoint(latLng){path.push(latLng);if(polygon)polygon.setMap(null);polygon=new google.maps.Polygon({paths:path,strokeColor:"#FF0000",fillColor:"#FF0000",fillOpacity:.3});polygon.setMap(map);calculateArea();}
